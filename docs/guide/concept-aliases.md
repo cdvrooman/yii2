@@ -104,8 +104,8 @@ Predefined Aliases <a name="predefined-aliases"></a>
 
 Yii predefines a set of aliases to easily reference commonly used file paths and URLs:
 
-- `@yii`, the directory where the `BaseYii.php` file is located (also called the framework directory)
-- `@app`, the [[yii\base\Application::basePath|base path]] of the currently running application
+- `@yii`, the directory where the `BaseYii.php` file is located (also called the framework directory).
+- `@app`, the [[yii\base\Application::basePath|base path]] of the currently running application.
 - `@runtime`, the [[yii\base\Application::runtimePath|runtime path]] of the currently running application. Defaults to `@app/runtime`.
 - `@webroot`, the Web root directory of the currently running Web application. It is determined based on the directory
   containing the entry script.

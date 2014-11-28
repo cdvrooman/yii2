@@ -16,15 +16,15 @@ $this->registerJs("var options = ".json_encode($options).";", View::POS_END, 'my
 ```
 
 The first argument is the actual JS code we want to insert into the page. The second argument
-determines where script should be inserted into the page. Possible values are:
+determines where the script should be inserted into the page. Possible values are:
 
-- [[yii\web\View::POS_HEAD|View::POS_HEAD]] for head section.
-- [[yii\web\View::POS_BEGIN|View::POS_BEGIN]] for right after opening `<body>`.
-- [[yii\web\View::POS_END|View::POS_END]] for right before closing `</body>`.
-- [[yii\web\View::POS_READY|View::POS_READY]] for executing code on document `ready` event. This will register [[yii\web\JqueryAsset|jQuery]] automatically.
-- [[yii\web\View::POS_LOAD|View::POS_LOAD]] for executing code on document `load` event. This will register [[yii\web\JqueryAsset|jQuery]] automatically.
+- [[yii\web\View::POS_HEAD|View::POS_HEAD]] for the head section.
+- [[yii\web\View::POS_BEGIN|View::POS_BEGIN]] for right after the opening `<body>` tag.
+- [[yii\web\View::POS_END|View::POS_END]] for right before the closing `</body>` tag.
+- [[yii\web\View::POS_READY|View::POS_READY]] for executing code on the document's `ready` event. This will register [[yii\web\JqueryAsset|jQuery]] automatically.
+- [[yii\web\View::POS_LOAD|View::POS_LOAD]] for executing code on the document's `load` event. This will register [[yii\web\JqueryAsset|jQuery]] automatically.
 
-The last argument is a unique script ID that is used to identify code block and replace existing one with the same ID
+The last argument is a unique script ID that is used to identify the code block and replace the existing one with the same ID
 instead of adding a new one. If you don't provide it, the JS code itself will be used as the ID.
 
 An external script can be added like the following:
@@ -45,9 +45,9 @@ Like for [[yii\web\View::registerCssFile()|registerCssFile()]], it is also highl
 
 ### Registering asset bundles
 
-As was mentioned earlier it's preferred to use asset bundles instead of using CSS and JavaScript directly. You can get
-details on how to define asset bundles in [asset manager](structure-assets.md) section of the guide. As for using already defined
-asset bundle, it's very straightforward:
+As mentioned earlier it is preferred to use asset bundles instead of using CSS and JavaScript directly. You can get
+details on how to define asset bundles in the [asset manager](structure-assets.md) section of the guide. As for using an already defined
+asset bundle, it is very straightforward:
 
 ```php
 \frontend\assets\AppAsset::register($this);
@@ -72,8 +72,8 @@ body { background: #f00; }
 </style>
 ```
 
-If you want to specify additional properties of the style tag, pass an array of name-values to the third argument.
-If you need to make sure there's only a single style tag use fourth argument as was mentioned in meta tags description.
+If you want to specify additional properties of the style tag, pass an array of name-values as the third argument.
+If you need to make sure there's only a single style tag, use hte fourth argument as was mentioned in the meta tags description.
 
 ```php
 $this->registerCssFile("http://example.com/css/themes/black-and-white.css", [
@@ -82,7 +82,7 @@ $this->registerCssFile("http://example.com/css/themes/black-and-white.css", [
 ], 'css-print-theme');
 ```
 
-The code above will add a link to CSS file to the head section of the page.
+The code above will add a link to the CSS file to the head section of the page.
 
 * The first argument specifies the CSS file to be registered.
 * The second argument specifies the HTML attributes for the resulting `<link>` tag. The option `depends`

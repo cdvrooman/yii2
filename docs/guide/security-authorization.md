@@ -47,20 +47,20 @@ class SiteController extends Controller
 }
 ```
 
-In the code above ACF is attached to the `site` controller as a behavior. This is the typical way of using an action
-filter. The `only` option specifies that the ACF should only be applied to `login`, `logout` and `signup` actions.
+In the code above, ACF is attached to the `site` controller as a behavior. This is the typical way of using an action
+filter. The `only` option specifies that the ACF should only be applied to the `login`, `logout` and `signup` actions.
 The `rules` option specifies the [[yii\filters\AccessRule|access rules]], which reads as follows:
 
-- Allow all guest (not yet authenticated) users to access 'login' and 'signup' actions. The `roles` option
+- Allow all guest (not yet authenticated) users to access the 'login' and 'signup' actions. The `roles` option
   contains a question mark `?` which is a special token recognized as "guests".
-- Allow authenticated users to access 'logout' action. The `@` character is another special token recognized as
+- Allow authenticated users to access the 'logout' action. The `@` character is another special token recognized as
   authenticated users.
 
-When ACF performs authorization check, it will examine the rules one by one from top to bottom until it finds
+When ACF performs its authorization check, it will examine the rules one by one from top to bottom until it finds
 a match. The `allow` value of the matching rule will then be used to judge if the user is authorized. If none
 of the rules matches, it means the user is NOT authorized and ACF will stop further action execution.
 
-By default, ACF does only of the followings when it determines a user is not authorized to access the current action:
+By default, ACF only does the following when it determines a user is not authorized to access the current action:
 
 * If the user is a guest, it will call [[yii\web\User::loginRequired()]], which may redirect the browser to the login page.
 * If the user is already authenticated, it will throw a [[yii\web\ForbiddenHttpException]].
@@ -93,6 +93,7 @@ empty or not set, it means the rule applies to all controllers.
 Two special roles are recognized, and they are checked via [[yii\web\User::isGuest]]:
      - `?`: matches a guest user (not authenticated yet)
      - `@`: matches an authenticated user
+
 Using other role names requires RBAC (to be described in the next section), and [[yii\web\User::can()]] will be called.
 If this option is empty or not set, it means this rule applies to all roles.
 
